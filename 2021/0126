@@ -1,0 +1,15 @@
+1. Spring boot 에서 Jpa와 Mybatis 같이 쓰는 방법
+  - context를 이용하여 바꾸어 주는 형태로 사용하면 가능, 하지만 쉬워보이지 않음..
+  - 프로젝트 기간이 급해 일단 Controller를 나누어 주어 구현
+  - 차후 시간이 생긴다면 한개의 컨트롤러로 해주도록 바꾸어보기!
+  
+2. Jpa 와 Mybatis의 장단점
+  - Jpa는 database와 VO를 연결할 때, 따로 메소드를 만들지 않아도, 형식만 맞추어서 parameter를 설정하면 알아서 연결된다.
+  - method구현도 메소드 이름의 형태만 맞추어주면 알아서 구현!!!
+  - 하지만 복잡한 쿼리는 구현하기 힘들다(구현한다 해도 메소드의 이름의 길이가 매우 길어짐)
+  - Mybatis는 Mapper와 xml을 이용하여 쿼리 구현 가능
+  - 복잡한 쿼리를 사용할 때에는 Mybatis가 유용
+  - 둘을 같이 사용할 경우 CUD는 Jpa, R은 Mybatis로 사용하는 경우가 많음.(R이 복잡한 경우가 많아서)
+  
+3. 어제 해결하지 못했던 서버 배포과정
+  - Spring boot 에서 application.properties에 'spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQLDialect' 를 추가해주었더니 해결~
